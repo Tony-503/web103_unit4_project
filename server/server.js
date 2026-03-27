@@ -4,13 +4,14 @@ import favicon from 'serve-favicon'
 import dotenv from 'dotenv'
 
 // import the router from your routes file
-
+app.use('/api', router)
 
 dotenv.config()
 
 const PORT = process.env.PORT || 3000
 
 const app = express()
+
 
 app.use(express.json())
 
