@@ -5,6 +5,10 @@ import ViewCars from './pages/ViewCars'
 import EditCar from './pages/EditCar'
 import CreateCar from './pages/CreateCar'
 import CarDetails from './pages/CarDetails'
+import Header from './components/Header'
+import LeftSide from './components/leftSide'
+import Selections from './components/selections'
+import RightSide from './components/rightside'
 import './App.css'
 
 const App = () => {
@@ -28,12 +32,17 @@ const App = () => {
   ])
 
   return (
+    <div class="flex pt-16 h-screen">
+    
     <div className='app'>
 
-      <Navigation />
-
+      <Header />
+      <LeftSide />
+      <Selections />
+      <RightSide />
       { element }
 
+    </div>
     </div>
   )
 }

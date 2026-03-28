@@ -1,16 +1,16 @@
-import express from 'express'
-import path from 'path'
-import favicon from 'serve-favicon'
-import dotenv from 'dotenv'
 
-// import the router from your routes file
-app.use('/api', router)
+import express from 'express';
+import path from 'path';
+import favicon from 'serve-favicon';
+import dotenv from 'dotenv';
+import router from './routes/PCcustome.js';
 
-dotenv.config()
+dotenv.config();
 
-const PORT = process.env.PORT || 3000
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-const app = express()
+app.use('/api', router);
 
 
 app.use(express.json())
