@@ -3,7 +3,7 @@ import "./Sidebar.css";
 
 const navItems = ["CPU", "GPU", "RAM", "Storage", "Case"];
 
-export default function Sidebar() {
+export default function Sidebar({ currentSection, setCurrentSection }) {
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">VOLTAGE</div>
@@ -16,8 +16,10 @@ export default function Sidebar() {
           <div
             key={item}
             className={
-              "sidebar-nav-item" + (item === "CPU" ? " active" : "")
+              "sidebar-nav-item" + (item.toLowerCase() === currentSection ? " active" : "")
             }
+            onClick={() => setCurrentSection(item.toLowerCase())}
+            style={{ cursor: 'pointer' }}
           >
             <div className="sidebar-icon" />
             {item}

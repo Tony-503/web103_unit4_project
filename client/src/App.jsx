@@ -36,7 +36,7 @@ const App = () => {
     <div className='app'>
        <PCBuilder/>
      
-      { element }
+      {element}
 
     </div>
     
