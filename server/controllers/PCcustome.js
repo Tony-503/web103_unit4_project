@@ -99,5 +99,16 @@ const getcase = async (req, res) => {
 };
 
 
+const getbuilds = async (req, res) => {
+    try {
+        const result = await pool.query("SELECT * FROM pc_cust");
+        res.json(result.rows);
+    } catch (error) {
+        console.error('Error fetching builds:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
 
-export { getcpu, getgpu, getram, getstorage, getcase, createBuild };
+
+
+export { getcpu, getgpu, getram, getstorage, getcase, createBuild, getbuilds };

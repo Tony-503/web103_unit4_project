@@ -1,3 +1,9 @@
+// Fetch all builds
+export async function fetchBuilds() {
+  const res = await fetch(`${API_BASE}/builds`);
+  if (!res.ok) throw new Error('Failed to fetch builds');
+  return res.json();
+}
 // API service for PC components
 
 const API_BASE = '/api';
@@ -45,3 +51,12 @@ export async function createBuild(buildData) {
     if (!res.ok) throw new Error('Failed to create build');
     return res.json();
 }
+
+
+
+export async function fetchBuildById(id) {
+    const res = await fetch(`${API_BASE}/builds/${id}`);
+    if (!res.ok) throw new Error('Failed to fetch build');
+    return res.json();
+}
+

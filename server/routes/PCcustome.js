@@ -11,6 +11,8 @@ router.get('/ram', PCcustomeController.getram);
 
 router.get('/storage', PCcustomeController.getstorage);
 router.get('/case', PCcustomeController.getcase);
+
+router.get('/builds', PCcustomeController.getbuilds);
 router.post('/builds', PCcustomeController.createBuild);
 
 

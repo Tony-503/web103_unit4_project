@@ -1,45 +1,37 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
 import Navigation from './components/Navigation'
-import ViewCars from './pages/ViewCars'
-import EditCar from './pages/EditCar'
-import CreateCar from './pages/CreateCar'
 import CarDetails from './pages/CarDetails'
 import PCBuilder from './components/PCBuilder'
 import './components/PCBuilder.css';
 
 import './App.css'
+import ViewBuilds from './pages/ViewBuilds'
 
 const App = () => {
   let element = useRoutes([
+   
+    {
+      path: '/customBuilds',
+      element: <ViewBuilds title='PC | Views' />
+    },
+    {
+      path: '/builds',
+      element: <ViewBuilds title='PC | Views' />
+    },
+
     {
       path: '/',
-      element: <CreateCar title='BOLT BUCKET | Customize' />
-    },
-    {
-      path:'/customcars',
-      element: <ViewCars title='BOLT BUCKET | Custom Cars' />
-    },
-    {
-      path: '/customcars/:id',
-      element: <CarDetails title='BOLT BUCKET | View' />
-    },
-    {
-      path: '/edit/:id',
-      element: <EditCar title='BOLT BUCKET | Edit' />
+      element: <PCBuilder />
     }
   ])
 
   return (
-    
-    
     <div className='app'>
-       <PCBuilder/>
-     
+      <Navigation />
       {element}
-
+      
     </div>
-    
   )
 }
 
