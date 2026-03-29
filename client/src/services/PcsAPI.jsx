@@ -21,3 +21,27 @@ export async function fetchRAMs() {
   if (!res.ok) throw new Error('Failed to fetch RAMs');
   return res.json();
 }
+
+
+export async function fetchStorages() {
+  const res = await fetch(`${API_BASE}/storage`);
+  if (!res.ok) throw new Error('Failed to fetch STORAGE');
+  return res.json();
+}
+
+export async function fetchCases() {
+    const res = await fetch(`${API_BASE}/case`);
+    if (!res.ok) throw new Error('Failed to fetch CASES');
+    return res.json();
+}
+
+
+export async function createBuild(buildData) {
+    const res = await fetch(`${API_BASE}/builds`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(buildData)
+    });
+    if (!res.ok) throw new Error('Failed to create build');
+    return res.json();
+}

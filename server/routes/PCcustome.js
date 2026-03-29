@@ -9,6 +9,11 @@ router.get('/gpu', PCcustomeController.getgpu);
 
 router.get('/ram', PCcustomeController.getram);
 
+router.get('/storage', PCcustomeController.getstorage);
+router.get('/case', PCcustomeController.getcase);
+router.post('/builds', PCcustomeController.createBuild);
+
+
 
 
 

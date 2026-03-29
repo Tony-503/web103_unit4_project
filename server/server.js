@@ -7,13 +7,12 @@ import router from './routes/PCcustome.js';
 
 dotenv.config();
 
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json()); // <-- Parse JSON before routes
 app.use('/api', router);
-
-
-app.use(express.json())
 
 if (process.env.NODE_ENV === 'development') {
     app.use(favicon(path.resolve('../', 'client', 'public', 'lightning.png')))

@@ -23,9 +23,11 @@ import Sidebar from "./Sidebar";
 import CpuSelector from "./CpuSelector";
 import GpuSelector from "./GpuSelector";
 import RamSelector from "./RamSelector";
+import StorageSelector from "./storageSelextor";
+import CaseSelector from "./CaseSelector";
 import "./PCBuilder.css";
 
-import { fetchCPUs, fetchGPUs, fetchRAMs } from "../services/PcsAPI";
+import { fetchCPUs, fetchGPUs, fetchRAMs, fetchStorages, fetchCases  } from "../services/PcsAPI";
 
 
 
@@ -73,6 +75,14 @@ export default function PCBuilder() {
   const [loadingRam, setLoadingRam] = useState(true);
   const [errorRam, setErrorRam] = useState(null);
 
+  const [storages, setStorages] = useState([]);
+  const [loadingStorage, setLoadingStorage] = useState(true);
+  const [errorStorage, setErrorStorage] = useState(null);
+
+  const [cases, setCases] = useState([]);
+  const [loadingCase, setLoadingCase] = useState(true);
+  const [errorCase, setErrorCase] = useState(null);
+
 
 
   const [selectedParts, setSelectedParts] = useState({
@@ -95,6 +105,14 @@ export default function PCBuilder() {
   const handleSelectRam = (ram) => {
   setSelectedParts(prev => ({ ...prev, ram }));
 };
+
+const handleSelectStorage = (storage) => {
+    setSelectedParts(prev => ({ ...prev, storage }));
+  };
+
+const handleSelectCase = (caseItem) => {
+    setSelectedParts(prev => ({ ...prev, case: caseItem }));
+  };
 
   useEffect(() => {
     fetchCPUs()
@@ -132,6 +150,32 @@ export default function PCBuilder() {
     });
 }, []);
 
+
+  useEffect(() => {
+    fetchStorages()
+      .then(data => {
+        setStorages(data);
+        setLoadingStorage(false);
+      })
+      .catch(err => {
+        setErrorStorage('Failed to load STORAGE');
+        setLoadingStorage(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetchCases()
+      .then(data => {
+        setCases(data);
+        setLoadingCase(false);
+      })
+      .catch(err => {
+        setErrorCase('Failed to load CASES');
+        setLoadingCase(false);
+      });
+  }, []);
+
+
   return (
     <div className="app-container" style={{ minHeight: '100vh', height: 'auto' }}>
       <Sidebar currentSection={currentSection} setCurrentSection={setCurrentSection} />
@@ -163,6 +207,27 @@ export default function PCBuilder() {
             loading={loadingRam}
             error={errorRam}
             onSelect={handleSelectRam}
+          />
+        )}
+
+        
+        {currentSection === 'storage' && (
+          <StorageSelector
+            storages={storages}
+            loading={loadingStorage}
+            error={errorStorage}
+            onSelect={handleSelectStorage}
+          />
+        )}
+       
+
+        {currentSection === 'case' && (
+          
+          <CaseSelector
+            cases={cases}
+            loading={loadingCase}
+            error={errorCase}
+            onSelect={handleSelectCase}
           />
         )}
       </div>

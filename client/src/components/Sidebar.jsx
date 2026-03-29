@@ -8,8 +8,8 @@ export default function Sidebar({ currentSection, setCurrentSection }) {
     <aside className="sidebar">
       <div className="sidebar-logo">VOLTAGE</div>
       <div className="sidebar-label-group">
-        <div className="sidebar-category">COMPONENTS</div>
-        <div className="sidebar-sublabel">BUILD CONFIGURATION</div>
+        <div className="sidebar-category">Custop</div>
+        <div className="sidebar-sublabel">BUILD Dream PC</div>
       </div>
       <nav className="sidebar-nav">
         {navItems.map((item) => (
