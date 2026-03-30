@@ -1,3 +1,13 @@
+// Update a build by ID
+export async function updateBuild(id, buildData) {
+  const res = await fetch(`${API_BASE}/builds/${id}` , {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(buildData)
+  });
+  if (!res.ok) throw new Error('Failed to update build');
+  return res.json();
+}
 // Fetch all builds
 export async function fetchBuilds() {
   const res = await fetch(`${API_BASE}/builds`);
@@ -60,3 +70,9 @@ export async function fetchBuildById(id) {
     return res.json();
 }
 
+
+export async function fetchBuildsbyID() {
+    const res = await fetch(`${API_BASE}/builds/:id`);
+    if (!res.ok) throw new Error('Failed to fetch builds by ID');
+    return res.json();
+}

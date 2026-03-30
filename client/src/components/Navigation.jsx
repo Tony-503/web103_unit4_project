@@ -7,7 +7,7 @@ const Navigation = () => {
     return (
         <nav>
             <ul>
-                <li><h1>PC Builds</h1></li>
+                <li><h1><Link to='/'>PC Builds</Link></h1></li>
             </ul>
 
             <ul>

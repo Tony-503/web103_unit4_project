@@ -1,0 +1,73 @@
+/* BuildsCard.css - Voltage Overdrive theme for builds list */
+
+.builds-card-root {
+  background: #0D1117;
+  border-radius: 16px;
+  padding: 32px;
+  color: #fff;
+  font-family: 'Space Grotesk', monospace;
+  border: 1px solid #007BFF;
+  max-width: 1400px;
+  margin: 40px auto;
+  box-shadow: 0 2px 24px 0 #00ffc22a;
+}
+
+.builds-card-title {
+  color: #00FFC2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.builds-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.builds-card-item {
+  background: #161B22;
+  border: 1px solid #007BFF;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 24px;
+  box-shadow: 0 0 12px #00FFC2AA;
+  font-size: 1.1rem;
+}
+
+.builds-card-item strong {
+  color: #00FFC2;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.builds-card-price {
+  color: #00FFC2;
+  font-weight: 600;
+  margin: 8px 0 12px 0;
+}
+
+.builds-card-components-label {
+  margin-bottom: 8px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.builds-card-components-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 24px;
+  background: none;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.builds-card-components-list li span {
+  color: #00FFC2;
+}

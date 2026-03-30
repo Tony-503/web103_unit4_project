@@ -1,0 +1,91 @@
+.build-details-root {
+  background: #0D1117;
+  border-radius: 16px;
+  padding: 40px;
+  color: #fff;
+  font-family: 'Space Grotesk', monospace;
+  border: 1px solid #007BFF;
+  max-width: 1400px;
+  margin: 40px auto;
+  box-shadow: 0 2px 24px 0 #00ffc22a;
+}
+
+.build-details-title {
+  color: #00FFC2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.build-details-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00FFC2;
+  margin-bottom: 8px;
+}
+
+.build-details-price {
+  color: #00FFC2;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.build-details-components {
+  margin: 24px 0;
+  background: #161B22;
+  border-radius: 12px;
+  padding: 24px 16px;
+}
+
+.build-details-components-title {
+  color: #00FFC2;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.build-details-components-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 32px;
+  font-size: 1.05rem;
+}
+
+.build-details-component-item {
+  text-align: center;
+}
+
+.build-details-component-item strong {
+  color: #00FFC2;
+}
+
+.build-details-component-item img {
+  max-width: 200px;
+  width: 100%;
+  margin-top: 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #00FFC2;
+  transition: transform 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.4s, filter 0.4s;
+}
+
+.build-details-component-item img:hover {
+  transform: scale(1.13) rotate(-6deg);
+  box-shadow: 0 0 32px 8px #00FFC2, 0 0 0 4px #007BFF44;
+  filter: brightness(1.15) saturate(1.2);
+}
+
+.build-details-back {
+  display: inline-block;
+  margin-top: 16px;
+  color: #007BFF;
+  background: #0D1117;
+  border: 1px solid #007BFF;
+  border-radius: 8px;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+}

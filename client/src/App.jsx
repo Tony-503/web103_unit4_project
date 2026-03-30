@@ -1,12 +1,14 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
 import Navigation from './components/Navigation'
-import CarDetails from './pages/CarDetails'
+import BuildDetails from './pages/BuildDetails'
 import PCBuilder from './components/PCBuilder'
+import ViewBuilds from './pages/ViewBuilds'
+import EditBuild from './pages/EditBuild'
 import './components/PCBuilder.css';
 
 import './App.css'
-import ViewBuilds from './pages/ViewBuilds'
+
 
 const App = () => {
   let element = useRoutes([
@@ -23,6 +25,21 @@ const App = () => {
     {
       path: '/',
       element: <PCBuilder />
+    },
+
+    {
+     path: '/customBuilds/:id',
+      element: <EditBuild />
+    },
+  
+    {
+      path: '/builds/:id',
+      element: <BuildDetails />
+    },
+
+    {
+     path: '*',
+      element: <div style={{color:'#fff'}}>404 Not Found</div>
     }
   ])
 
