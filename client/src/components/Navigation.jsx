@@ -1,22 +1,25 @@
-import React from 'react'
-import '../App.css'
-import '../css/Navigation.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import '../App.css';
+import '../css/Navigation.css';
+import { Link } from 'react-router-dom';
 
-const Navigation = () => {
+function Navigation() {
     return (
-        <nav>
-            <ul>
-                <li><h1><Link to='/'>PC Builds</Link></h1></li>
+        <nav className="navigation-bar">
+            <ul className="navigation-left">
+                <li>
+                    <h1 className="navigation-title">
+                        <Link to="/" className="navigation-link navigation-title">PC Builds</Link>
+                    </h1>
+                </li>
             </ul>
-
-            <ul>
-                {/* <li><Link to='/builds'>Customize</Link></li> */}
-                <li><Link to='/builds'>View Builds</Link></li>
+            <ul className="navigation-right">
+                <li>
+                    <Link to="/builds" className="navigation-link">View Builds</Link>
+                </li>
             </ul>
-            
         </nav>
-    )
+    );
 }
 
-export default Navigation
+export default Navigation;

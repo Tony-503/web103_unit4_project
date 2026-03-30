@@ -74,6 +74,7 @@ const EditBuild = () => {
             const sanitized = sanitizeFormData(form);
             await updateBuild(id, sanitized);
             setSubmitMsg('Build updated successfully!');
+            
         } catch (err) {
             setSubmitMsg('Failed to update build.');
         }
@@ -134,7 +135,7 @@ const EditBuild = () => {
                 <button type="submit" style={{background:'#00FFC2', color:'#0D1117', fontWeight:700, border:'none', borderRadius:8, padding:'10px 32px', fontSize:'1.1rem', cursor:'pointer'}}>Update Build</button>
             </form>
             {submitMsg && <div style={{marginTop:16, color:'#00FFC2'}}>{submitMsg}</div>}
-            <Link to="/builds" style={{display:'inline-block', marginTop:24, color:'#007BFF'}}>Back to Builds</Link>
+            
         </div>
     );
 }

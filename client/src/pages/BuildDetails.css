@@ -63,8 +63,7 @@
 }
 
 .build-details-component-item img {
-  max-width: 200px;
-  width: 100%;
+  max-width: 120px;
   margin-top: 8px;
   border-radius: 8px;
   box-shadow: 0 0 8px #00FFC2;
@@ -88,4 +87,152 @@
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+/* --- PC Diagram Layout --- */
+.pc-diagram {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  margin: 40px auto 32px auto;
+}
+
+.case-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.case-center img {
+  width: 220px;
+  box-shadow: 0 0 32px #00ffc288;
+  border-radius: 20px;
+  border: 4px solid #00FFC2;
+}
+
+.part {
+  position: absolute;
+  text-align: center;
+  z-index: 3;
+}
+
+.part img {
+  width: 120px;
+  border-radius: 14px;
+  box-shadow: 0 0 18px #00ffc2;
+  background: #222;
+  border: 3px solid #00FFC2;
+}
+
+.cpu {
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.gpu {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ram {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.storage {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.line {
+  background: linear-gradient(90deg, #00ffcc 60%, #007BFF 100%);
+  box-shadow: 0 0 18px #00ffcc, 0 0 8px #007BFF;
+  border-radius: 2px;
+}
+.vertical {
+  width: 6px;
+  height: 180px;
+  margin: auto;
+}
+.horizontal {
+  height: 6px;
+  width: 180px;
+  margin: auto;
+}
+
+.gpu .line {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 6px;
+  background: linear-gradient(90deg, #00ffcc 60%, #007BFF 100%);
+  box-shadow: 0 0 18px #00ffcc, 0 0 8px #007BFF;
+  border-radius: 2px;
+}
+
+.ram .line {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 6px;
+  background: linear-gradient(90deg, #007BFF 0%, #00ffcc 100%);
+  box-shadow: 0 0 18px #00ffcc, 0 0 8px #007BFF;
+  border-radius: 2px;
+}
+
+.cpu .line {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 180px;
+  background: linear-gradient(180deg, #00ffcc 60%, #007BFF 100%);
+  box-shadow: 0 0 18px #00ffcc, 0 0 8px #007BFF;
+  border-radius: 2px;
+}
+
+.part strong {
+  display: block;
+  margin-top: 10px;
+  color: #00FFC2;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 10px #00ffc2cc;
+}
+
+@media (max-width: 900px) {
+  .pc-diagram {
+    width: 400px;
+    height: 400px;
+  }
+  .case-center img {
+    width: 110px;
+  }
+  .part img {
+    width: 60px;
+  }
+  .vertical {
+    height: 80px;
+  }
+  .horizontal {
+    width: 80px;
+  }
+  .cpu {
+    top: -80px;
+  }
+  .gpu .line, .ram .line {
+    width: 80px;
+    height: 6px;
+  }
+  .cpu .line {
+    height: 80px;
+  }
 }
