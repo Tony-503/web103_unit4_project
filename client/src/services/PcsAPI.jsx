@@ -76,3 +76,11 @@ export async function fetchBuildsbyID() {
     if (!res.ok) throw new Error('Failed to fetch builds by ID');
     return res.json();
 }
+
+export async function deleteBuild(id) {
+    const res = await fetch(`${API_BASE}/builds/${id}`, {
+        method: 'DELETE'
+    });
+    if (!res.ok) throw new Error('Failed to delete build');
+    return res.json();
+}

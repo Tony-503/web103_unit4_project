@@ -172,4 +172,4 @@ const deleteBuild = async (req, res) => {
 
 
 
-export { getcpu, getgpu, getram, getstorage, getcase, createBuild, getbuilds, getbuildById, updateBuild };
+export { getcpu, getgpu, getram, getstorage, getcase, createBuild, getbuilds, getbuildById, updateBuild, deleteBuild };

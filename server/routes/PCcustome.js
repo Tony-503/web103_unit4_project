@@ -16,6 +16,7 @@ router.get('/builds', PCcustomeController.getbuilds);
 router.post('/builds', PCcustomeController.createBuild);
 router.get('/builds/:id', PCcustomeController.getbuildById);
 router.put('/builds/:id', PCcustomeController.updateBuild);
+router.delete('/builds/:id', PCcustomeController.deleteBuild);
 
 
 

@@ -28,6 +28,10 @@ const App = () => {
     },
 
     {
+      path:  'deleteBuilds/:id',
+    },
+
+    {
      path: '/customBuilds/:id',
       element: <EditBuild />
     },
@@ -35,11 +39,6 @@ const App = () => {
     {
       path: '/builds/:id',
       element: <BuildDetails />
-    },
-
-    {
-     path: '*',
-      element: <div style={{color:'#fff'}}>404 Not Found</div>
     }
   ])
 

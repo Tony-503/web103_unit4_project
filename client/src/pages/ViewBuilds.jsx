@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import '../App.css';
 import './BuildsCard.css';
-import { Link } from 'react-router-dom';
-import { fetchBuilds, fetchCPUs, fetchGPUs, fetchRAMs, fetchStorages, fetchCases } from '../services/PcsAPI';
+import { Link, redirect } from 'react-router-dom';
+import { fetchBuilds, fetchCPUs, fetchGPUs, fetchRAMs, fetchStorages, fetchCases, deleteBuild } from '../services/PcsAPI';
 
 const ViewBuilds = () => {
 
@@ -22,6 +22,7 @@ const ViewBuilds = () => {
                     fetchRAMs(),
                     fetchStorages(),
                     fetchCases()
+            
                 ]);
                 setBuilds(buildsData);
                 setComponents({ cpus, gpus, rams, storages, cases });
@@ -44,6 +45,18 @@ const ViewBuilds = () => {
         const found = arr.find(c => c.id === id);
         return found ? found.name : id;
     }
+
+        async function handleDelete(id) {
+        try {
+            await deleteBuild(id);
+            setBuilds(builds.filter(b => b.id !== id && b._id !== id));
+                
+                window.location.href = '/builds';
+        } catch (err) {
+            alert('Failed to delete build: ' + err.message);
+        }
+    }
+    
 
     return (
         <> 
@@ -70,6 +83,10 @@ const ViewBuilds = () => {
                                  <Link to={`/builds/${build.id || build._id}`}>View Details</Link>
                                     <br />
                                 <Link to={`/customBuilds/${build.id || build._id}`}>Edit Build</Link>
+                                 <br />
+                                 <Link to={`/customBuilds/${build.id || build._id}/delete`} onClick={(e) => handleDelete(build.id || build._id)}>
+                                    Delete Build
+                                 </Link>
                                </div>
                                 
                             </ul>
