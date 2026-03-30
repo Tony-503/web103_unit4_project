@@ -12,6 +12,9 @@ function Navigation() {
                         <Link to="/" className="navigation-link navigation-title">PC Builds</Link>
                     </h1>
                 </li>
+                    <li>
+                    <Link to="/" className="navigation-link">HOME</Link>
+                </li>
             </ul>
             <ul className="navigation-right">
                 <li>

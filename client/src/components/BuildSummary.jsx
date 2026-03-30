@@ -73,7 +73,7 @@ export default function BuildSummary({ selectedParts }) {
         <div className="summary-footer">
           <div className="summary-total-label">ESTIMATED TOTAL</div>
           <div className="summary-total-price">${total}</div>
-          <button className="summary-checkout" type="submit" disabled={summary.length === 0}>CHECKOUT CONFIGURATION</button>
+          <button className="summary-checkout" type="submit" disabled={summary.length === 0}>CHECKOUT</button>
           {submitStatus && <div className="submit-status">{submitStatus}</div>}
         </div>
       </form>
