@@ -4,11 +4,13 @@ import path from 'path';
 import favicon from 'serve-favicon';
 import dotenv from 'dotenv';
 import router from './routes/PCcustome.js';
+import cors from 'cors';
 
 dotenv.config();
 
 
 const app = express();
+app.use(cors()); // Enable CORS for all routes
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json()); // <-- Parse JSON before routes

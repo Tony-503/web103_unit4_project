@@ -65,8 +65,9 @@ const createBuildsTable = async () => {
     } catch (err) {
         console.error('⚠️ error creating tables', err);
     } finally {
-        await pool.end();
-    }
+    console.log("Database reset complete, connection closed.");
+    process.exit(); // safer exit
+}
 };
 
 createBuildsTable();
